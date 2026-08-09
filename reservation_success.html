@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservation Success - Delicious Bites</title>
+<style>
+    /* Background Gradient */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #50C878 0%, #fad0c4 100%);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        color: #333;
+    }
+
+    /* Success Box */
+    .success-box {
+        background: white;
+        padding: 40px 50px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        position: relative;
+        z-index: 1;
+    }
+
+    .success-box h1 {
+        font-size: 2.5rem;
+        color: #007BFF;
+        margin-bottom: 20px;
+    }
+
+    .success-box p {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+
+    .success-box a {
+        display: inline-block;
+        text-decoration: none;
+        background: #007BFF;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        transition: 0.3s;
+    }
+
+    .success-box a:hover {
+        background: #0056b3;
+        transform: scale(1.05);
+    }
+
+    /* Confetti Animation */
+    .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #ffcc00;
+        top: -10px;
+        animation: fall 3s linear infinite;
+        opacity: 0.7;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(0) rotate(0deg); }
+        100% { transform: translateY(100vh) rotate(360deg); }
+    }
+</style>
+</head>
+<body>
+    <!-- Success Box -->
+    <div class="success-box">
+        <h1>Reservation Successful!</h1>
+        <p>Thank you, your table has been booked successfully.</p>
+        <a href="index.php">Back to Home</a>
+    </div>
+
+    <!-- Confetti (generate multiple pieces) -->
+    <script>
+        const colors = ['#FF3C3C','#FFBD3C','#3CFF3C','#3CDAFF','#C53CFF','#FF3CD7'];
+        for(let i=0;i<50;i++){
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = Math.random()*100+'vw';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+            confetti.style.width = confetti.style.height = Math.random()*10+5+'px';
+            confetti.style.animationDuration = (Math.random()*2+3)+'s';
+            document.body.appendChild(confetti);
+        }
+    </script>
+</body>
+</html>

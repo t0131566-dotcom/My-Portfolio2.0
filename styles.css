@@ -1,0 +1,54 @@
+/* ================== Header ================== */
+header {
+    background: #ffffff; /* Full white */
+    color: #333; /* Dark text */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+header img {
+    width: 160px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #333; /* dark links */
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FF7E5F;
+    transform: scale(1.05);
+}
+
+/* Responsive Navbar */
+@media(max-width:768px){
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 30px;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        display: none;
+    }
+    nav ul.active { display: flex; }
+}
